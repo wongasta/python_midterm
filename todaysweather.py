@@ -1,6 +1,7 @@
 import sys, json
 import urllib.request as urllib2
 weather_key = 'c14171b4eda5cd77c5267601811a2274'
+my_number = 123
 
 current_weather_url = 'http://api.openweathermap.org/data/2.5/weather'
 
