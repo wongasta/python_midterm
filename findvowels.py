@@ -17,16 +17,16 @@ def findvowels(word):
     count = 0
 
     for letter in word_split:
-        print (letter)
+        print(letter)
         if letter == 'a' or letter == 'i' or letter == 'e' or letter == 'o' or letter == 'u':
             print ("this letter is a vowel")
             count = count + 1
         else:
             print('this letter is not a vowel')
 
-    print (word)
+    print(word)
 
-    print ("the total number of vowels in " + str(word) + " is " + str(count))
+    print("the total number of vowels in " + str(word) + " is " + str(count))
     return;
 
 findvowels(word2)
