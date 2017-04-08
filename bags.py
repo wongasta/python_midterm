@@ -1,4 +1,5 @@
 #input
+from utilities.vowels_counting import count_vowels
 bags = [{
     'sku': 1234,
     'brand': 'LV',
@@ -26,26 +27,20 @@ bags = [{
     'texture': 'ruggity'
 }]
 
-vowels = ['a', 'e', 'i', 'o', 'u']
+def main():
+    def find_keys_with_vowels(bags, category, num_vowels):
+        bags_with_vowels = []
+        for bag in bags:
+            #total_vowels = count_vowels(bag[category])
+            if count_vowels(bag[category])['total_vowel'] >= num_vowels:
+                bags_with_vowels.append(bag)
+        print(bags_with_vowels)
+    find_keys_with_vowels(bags, 'brand', 2)
+    find_keys_with_vowels(bags, 'texture', 3)
+    find_keys_with_vowels(bags, 'color', 1)
+    return
+main()
 
-def count_vowels(word):
-    total = 0
-    for letter in word:
-        if letter in vowels:
-            total += 1
-    return total
-
-def find_keys_with_vowels(bags, category, num_vowels):
-    bags_with_vowels = []
-    for bag in bags:
-        total_vowels = count_vowels(bag[category])
-        if total_vowels >= num_vowels:
-            bags_with_vowels.append(bag)
-    print(bags_with_vowels)
-
-find_keys_with_vowels(bags, 'brand', 2)
-find_keys_with_vowels(bags, 'texture', 3)
-find_keys_with_vowels(bags, 'color', 1)
 
 #         vowels_in_texture = ["a", "i", "e", "o", "u"]
 #         for bag in bags:
